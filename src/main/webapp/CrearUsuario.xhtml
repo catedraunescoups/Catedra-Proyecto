@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<title>Catedra &mdash; Usuarios</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+
+ 
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico"/>
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic,700' rel='stylesheet' type='text/css'/>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'/>
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="resources/nitro-master/css/animate.css"/>
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="resources/nitro-master/css/icomoon.css"/>
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="resources/nitro-master/css/bootstrap.css"/>
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="resources/nitro-master/css/owl.carousel.min.css"/>
+	<link rel="stylesheet" href="resources/nitro-master/css/owl.theme.default.min.css"/>
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="resources/nitro-master/css/style.css"/>
+
+	<!-- Modernizr JS -->
+	<script src="resources/nitro-master/js/modernizr-2.6.2.min.js"></script>
+	
+
+	</head>
+	<body>
+
+	<div id="fh5co-page">
+		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+		<aside id="fh5co-aside" role="complementary" class="js-fullheight">
+
+			<h1 id="fh5co-logo"><a href="Listado_Publiciones.xhtml"><img src="resources/nitro-master/images/catedra.png" alt=""/></a></h1>
+				<nav id="fh5co-main-menu" role="navigation">
+				<ul>
+						<li><a href="Listado_PublicacionNo.xhtml">Noticias</a></li>
+						<li><a href="Listado_Publiciones.xhtml">Información</a></li>
+						<li ><a href="Listad_PublicacionesE.xhtml">Eventos</a></li>
+						<li><a href="RegistroPersonasAdmin.xhtml">Registrar Usuario Web</a></li>
+						<li><a href="ListarPersonas.xhtml">Listar Usuarios</a></li>
+						<li><a href="Registro_Publicacion.xhtml">Nueva Publicación</a></li>
+						<li class="fh5co-active"><a href="CrearUsuario.xhtml">Registrar Usuario Móvil</a></li>
+						
+					</ul>
+			</nav>
+
+			<div class="fh5co-footer">
+			<h:form>
+			<h:commandButton action="#{personaControler.logout()}" value="Cerrar Sesión" class="btn btn-primary btn-outline"/>
+			</h:form>
+				<p><small>Visitanos en Nuestas Redes Sociales</small>.</p>
+				<ul>
+						<li><a href="http://catedraunescoinclusion.org/" target="_blank"><i class="icon-search"></i></a></li>
+						<li><a href="https://www.facebook.com/inclusionups/"><i class="icon-facebook"></i></a></li>
+						<li><a href="https://twitter.com/inclusionups"><i class="icon-twitter"></i></a></li>
+						
+					</ul>
+			</div>
+
+		</aside>
+
+		<div id="fh5co-main">
+
+		
+
+			
+			<div class="fh5co-narrow-content animate-box" data-animate-effect="fadeInLeft">
+				
+				<div class="row">
+					<div class="col-md-4">
+						<h1>Registrar Usuario Móvil</h1>
+					</div>
+				</div>
+				<h:form action="">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="row">
+								<div class="col-md-6">
+								<div class="form-group">
+							        <label for="cedula">Cedula</label>
+							        <h:inputText class="form-control" value="#{personaControler.persona.cedula}"  id="cedula" />
+							    </div>
+							      <div class="form-group">
+							        <label for="username">Nombre</label>
+							        <h:inputText class="form-control" value="#{personaControler.persona.nombre}" id="username"/>
+							      </div>
+							      <div class="form-group">
+							        <label for="apellido">Apellido</label>
+							         <h:inputText value="#{personaControler.persona.apellido}" class="form-control"  id="apellido"  />
+							      </div>
+							     <div class="form-group">
+							        <label for="email">Email</label>
+							         <h:inputText value="#{personaControler.persona.email}" class="form-control"  id="email" />
+							       </div>
+							     <div class="form-group">
+							        <label for="passwordRepeat">Password</label>
+							        <h:inputSecret class="form-control" type="password" value="#{personaControler.persona.contrasena}" id="passwordRepeat" />
+							        
+							       </div>
+								<br />
+								
+								<center>	
+									<div class="form-group">
+										<h:commandButton  value="Guardar Usuario" action="#{personaControler.Guardar1()}" class="btn btn-primary btn-outline"/>
+									</div>
+									</center>
+								</div>
+								
+							</div>
+						</div>
+						
+					</div>
+				</h:form>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- jQuery -->
+	<script src="resources/nitro-master/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="resources/nitro-master/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="resources/nitro-master/js/bootstrap.min.js"></script>
+	<!-- Carousel -->
+	<script src="resources/nitro-master/js/owl.carousel.min.js"></script>
+	<!-- Stellar -->
+	<script src="resources/nitro-master/js/jquery.stellar.min.js"></script>
+	<!-- Waypoints -->
+	<script src="resources/nitro-master/js/jquery.waypoints.min.js"></script>
+	<!-- Counters -->
+	<script src="resources/nitro-master/js/jquery.countTo.js"></script>
+
+
+	
+	
+	<!-- MAIN JS -->
+	<script src="resources/nitro-master/js/main.js"></script>
+
+	</body>
+</html>
+

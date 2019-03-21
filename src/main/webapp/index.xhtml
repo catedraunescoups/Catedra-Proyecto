@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link href="resources/11419/css/default.css" rel="stylesheet" type="text/css" media="all" />
+	<script type="text/javascript" src="resources/11419/js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="resources/11419/js/jquery.formerize-0.1.js"></script>
+</head>      
+<body> 
+    <main>
+    <center>
+    <br />
+	<h:form>
+	<div class="box box-info">
+            <div class="box-header with-border">
+              <h2 class="box-title">
+              <em>Listado Publicaciones</em>
+              </h2>
+            </div>
+     </div>
+	
+
+	
+</h:form>	
+	  </center>
+    </main>
+    <div id="wrapper">
+
+	<div id="sidebar">
+		
+		<div id="logo">
+			<h1><a href="#" title="" rel="home">Your<span>Opinion</span></a></h1>
+		</div>
+		<div id="blurb">
+			<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		</div>
+		<div class="widget login">
+		
+			<h2 class="title">
+				User <span>Login</span>
+			</h2>
+			<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<form action="" method="post" id="loginform">
+					<input class="input" type="text" name="log" id="log" title="Username"  />
+					<input class="input" type="password" name="pwd" id="pwd" title="Password" />
+					<input type="submit" name="submit" value="login" class="button" />
+					<p>
+						<label for="rememberme"><input name="rememberme" id="rememberme" type="checkbox" checked="checked" value="forever" /> Remember me</label><br />
+						<span class="smlink">
+							<a href="#">forgot password</a> &nbsp;|&nbsp; <a href="#">register</a>
+						</span>
+					</p>
+				</form>	
+				<script type="text/javascript">
+					$('#loginform').formerize();
+				</script>		
+		</div>	
+	</div>
+	<div id="page">
+		<div id="tellus">
+			<form action="" method="post" id="commentform">
+				<input class="textbox" type="text" id="comment" name="comment" title="What do you think?"/>
+				<input class="submit" name="submit" type="submit" id="submit" value="Tell Us!" />
+			</form>	
+			<script type="text/javascript">
+				$('#commentform').formerize();
+			</script>			
+
+		</div>	
+
+		<div id="content">	
+			
+			<div class="title">
+				<span>Listado de Publicaciones!</span>
+			</div>
+					
+			<div class="content" style="clear: both;">&nbsp;</div>			
+			
+			<!-- Start Comments -->
+			<div id="comments" class="box-style1">
+				<ol class="commentlist">
+					<h:outputText value="No existe publicaciones registros" 
+					rendered="#{empty publicacionControler.publicaciones}"/>
+				
+					<h:dataTable value ="#{publicacionControler.publicaciones}" var="publicacion"
+						rendered="#{not empty publicacionControler.publicaciones}" cellspacing="10" width="50%">
+				
+						<h:column class="comment">
+							<img src="data:image/png;base64,#{publicacionControler.pdao.convertir(publicacion.imagen)}" class='avatar' height='66' width='66' />
+							<span class="author">#{publicacion.tipo}</span><a href="#" title="Tweet This" target="_blank"></a>
+							<span class="time">#{publicacion.fecha}</span>
+							<div class="comment-body">
+								<p>#{publicacion.texto} &nbsp;<a class='comment-reply-link' href='#'>reply</a></p>
+							</div>
+						</h:column>
+					</h:dataTable>			
+				</ol>
+			</div>			
+		</div>
+		<div id="footer">
+			<p>
+				Copyright (c) 2011 your Opinion All Rights Reserved. <a href="#">webmaster</a><br />
+				Design <a href="http://freewebsitetemplat.es" title="free website templates">Free Website Templates</a>
+			</p>
+		</div>
+	</div>
+</div>
+<div style="text-align: center; font-size: 0.75em;">Diseño descargado desde <a href="http://www.misplantillas.com/">plantillas web gratis</a>.</div></body>
+</html>

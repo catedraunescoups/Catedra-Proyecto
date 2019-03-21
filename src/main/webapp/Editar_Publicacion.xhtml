@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:o="http://omnifaces.org/ui">
+       <f:metadata>
+	<f:viewParam name="id" value="#{publicacionControler.id}"/>
+</f:metadata>
+<h:head>
+	<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="img/fav.png"/>
+		<!-- Author Meta -->
+		<meta name="author" content="colorlib"/>
+		<!-- Meta Description -->
+		<meta name="description" content=""/>
+		<!-- Meta Keyword -->
+		<meta name="keywords" content=""/>
+		<!-- meta character set -->
+		<meta charset="UTF-8" content=""/>
+		<!-- Site Title -->
+		<title>Travel</title>
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"/> 
+			
+		<link rel="stylesheet" href="resources/travel/css/linearicons.css"/>
+		<link rel="stylesheet" href="resources/travel/css/font-awesome.min.css"/>
+		<link rel="stylesheet" href="resources/travel/css/bootstrap.css"/>
+		<link rel="stylesheet" href="resources/travel/css/magnific-popup.css"/>
+		<link rel="stylesheet" href="resources/travel/css/jquery-ui.css"/>				
+		<link rel="stylesheet" href="resources/travel/css/nice-select.css"/>							
+		<link rel="stylesheet" href="resources/travel/css/animate.min.css"/>
+		<link rel="stylesheet" href="resources/travel/css/owl.carousel.css"/>				
+		<link rel="stylesheet" href="resources/travel/css/main.css"/>
+</h:head>
+<body>
+<!-- start banner Area -->
+		<section class="relative about-banner">	
+			<div class="overlay overlay-bg"></div>
+			<div class="container">				
+				<div class="row d-flex align-items-center justify-content-center">
+					<div class="about-content col-lg-12">
+						<h1 class="text-white">
+							Editar Publicacion				
+						</h1>	
+						<p class="text-white link-nav"><a href="Listado_Publiciones.xhtml">Mis Publicaciones </a> </p>
+					</div>	
+				</div>
+			</div>
+		</section>
+		<!-- End banner Area -->
+    	<center>
+	  <!-- Start post-content Area -->
+			<section class="post-content-area single-post-area">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 posts-list">
+							<div class="comment-form">
+								<h4>Realiza tu Publicación</h4>
+								<h:form  enctype="multipart/form-data">
+									<div class="form-group form-inline">
+									  <h:selectOneMenu value = "#{publicacionControler.publicacion.tipo}" > 
+								            <f:selectItem itemValue = "1" itemLabel = "Eventos" /> 
+								            <f:selectItem itemValue = "2" itemLabel = "Noticias" /> 
+								            <f:selectItem itemValue = "3" itemLabel = "Información" />    
+		        					</h:selectOneMenu>
+									 </div>
+								  <div class="form-group">					
+										<o:inputFile  id="file" value="#{publicacionControler.pdao.files}" a:multiple="true" />
+																			
+									</div>
+									<div class="form-group">
+										<h:inputText type="date" class="form-control" id="fecha" placeholder="Subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Subject'" value="#{publicacionControler.publicacion.fecha}"/>
+									</div>
+									<div class="form-group">
+										<h:inputTextarea class="form-control mb-10" rows="5" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required="" value="#{publicacionControler.publicacion.texto}">
+										</h:inputTextarea>
+									</div>
+									<h:commandButton class="genric-btn danger circle" action="#{publicacionControler.guardarE()}"  value="Editar Publicacion" />
+								</h:form>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</section>
+			<!-- End post-content Area -->
+	  </center>
+	  <script src="resources/travel/js/vendor/jquery-2.2.4.min.js"></script>
+			<script src="resources/travel/js/popper.min.js"></script>
+			<script src="resources/travel/js/vendor/bootstrap.min.js"></script>			
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>		
+ 			<script src="resources/travel/js/jquery-ui.js"></script>					
+  			<script src="resources/travel/js/easing.min.js"></script>			
+			<script src="resources/travel/js/hoverIntent.js"></script>
+			<script src="resources/travel/js/superfish.min.js"></script>	
+			<script src="resources/travel/js/jquery.ajaxchimp.min.js"></script>
+			<script src="resources/travel/js/jquery.magnific-popup.min.js"></script>						
+			<script src="resources/travel/js/jquery.nice-select.min.js"></script>					
+			<script src="resources/travel/js/owl.carousel.min.js"></script>							
+			<script src="resources/travel/js/mail-script.js"></script>	
+			<script src="resources/travel/js/main.js"></script>
+    </body>
+
+</html>
