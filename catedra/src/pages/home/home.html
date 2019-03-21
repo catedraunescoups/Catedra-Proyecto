@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar color="secondary">
+        <ion-title>Eventos</ion-title>
+        <button ion-button icon-only menuToggle>
+          <ion-icon name ="menu"></ion-icon>
+           </button>
+        <ion-buttons end>
+          
+        </ion-buttons>
+      </ion-navbar>
+  
+</ion-header>
+
+<ion-content >
+    <ion-card *ngFor="let c of countries">
+    <ion-item  color="secondary">
+        <ion-avatar item-start>
+            <img src="../assets/imgs/catedra.png">
+        </ion-avatar>
+        <p>Cateda Unesco</p>
+        <p>{{c.fecha}}</p>
+      </ion-item>
+    
+      <ion-slides class="image-slider" loop="true" slidesPerView="2" >
+          <ion-slide *ngFor="let i of c.imagenes" padding-top>
+              <img src="data:image/png;base64,{{i.imagen}}" style="width:100%;height:auto;" class="thumb-img" imageViewer/>
+          </ion-slide>
+        </ion-slides>
+
+    <ion-card-content>
+        {{c.texto}}
+    </ion-card-content>
+      </ion-card>
+      <ion-infinite-scroll [enabled]="morePagesAvailable" (ionInfinite)="doInfinite($event)">
+          <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="Loading more posts ...">
+          </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+    </ion-content>
+ 
+  
